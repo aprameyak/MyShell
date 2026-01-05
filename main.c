@@ -23,7 +23,11 @@ void other_command(char input[256], char *args[256]) {
 }
 
 void run_command(char path[256], char *args[256]) {
-
+	if(path != NULL) {
+		printf("\nInvalid executable. Exiting shell");
+	} else {
+		exexvp(path, args);
+	}
 }
 
 int main() {
