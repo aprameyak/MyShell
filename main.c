@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 void help() {
 	printf("\nThis is the shell. You have the following options: \nquit: exit the shell \nhelp: get information\ncd [directory]: change directory \npwd: print directory\n");
