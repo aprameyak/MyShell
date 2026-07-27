@@ -27,7 +27,7 @@ void run_command(char path[256], char *args[256]) {
 	if(path != NULL) {
 		printf("\nInvalid executable. Exiting shell");
 	} else {
-		exexvp(path, args);
+		execvp(path, args);
 	}
 }
 
@@ -46,13 +46,13 @@ int main() {
 		} else if(strcmp(intok[0], "pwd") == 0) {
 			char buffer[256];
 			if(getcwd(buffer, 256) != NULL) {
-				printf("\nCurrent directory: %s, buffer");
+				printf("\nCurrent directory: %s", buffer);
 			} else {
 				printf("Error getting working directory. Exiting shell");
 				exit(1);
 			}
 		} else {
-			if(intok[0][0] == "." || intok[0][0] == "/") {
+			if(intok[0][0] == '.' || intok[0][0] == '/') {
 				if(access(intok[0], X_OK) == 0) {
 					
 				} else {
